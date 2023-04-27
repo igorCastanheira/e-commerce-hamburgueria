@@ -1,25 +1,27 @@
 import React from "react"
 import "./styles/NavBar.css"
 import Logo from "./assets/x-salada.jpg"
+import CartIcon from "./cartWidget"
+function ListItem(props){
+    return(
+    <li><a href="#/" id="lista" >
+             {props.text}
+        </a></li>
+    )
+    
+}
+
+
 function NavBar (){
     return(
         <nav className="navBar">
-            <div className="logo">
-                <img src={Logo}alt="logo-img" className="logo"/>
-            </div>
+           
+            <CartIcon/>
             <ul>
-                <li><a href="#/" id="lista" >
-                        <ion-icon name="archive-outline"></ion-icon>
-                        Lista pedido
-                    </a></li>
-                <li><a href="#/" id="preco">
-                        <ion-icon name="swap-vertical-outline"></ion-icon>
-                        Preços
-                    </a></li>
-                <li><a href="#/" id="pagamento">
-                        <ion-icon name="cash-outline"></ion-icon>
-                        pagamento
-                    </a></li>
+               <ListItem text="Lista do pedido"/>
+               <ListItem text="Preços"/>
+               <ListItem text="Pagamento"/>
+              
             </ul>
         </nav>
 
