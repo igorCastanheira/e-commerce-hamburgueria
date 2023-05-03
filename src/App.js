@@ -1,13 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
 import NavBar from './components/NavBar'
 import MainContainer from './components/MainContainer';
+import ItemCount from './components/ItemCount';
 
 function App() {
   return (<div className='App'>
     <NavBar />
-    <MainContainer name="Coder House"/>
-  </div>)
+<ItemCount/>  </div>)
 }
 
 export default App;
