@@ -1,8 +1,8 @@
 nav{
     padding: 3.2rem 2.7rem 0 3.5rem;
-    background-color: black;
+    background-color:rgb(186, 184, 184);;
     width: max-content;
-    height: 100vh;
+    height: 100%;
    
     
 }
@@ -14,21 +14,21 @@ nav{
 ul{
     display: grid;
     gap:3.6rem;
-    margin-top: 6rem;
+    margin-top:3rem;
     list-style: none;
     min-width: 3.5rem;
 }
 li a{
-    color:darkorange ;
+    color:white ;
     display: flex;
     align-items: center;
     gap: 1.6rem;
     font-weight: 500;
-    margin-right: 20px;
+   
 }
 a.active,
 a:hover{
-    color: whitesmoke;
+    color: rgb(252, 237, 18);
     font-weight: 700;
 }
 a ion-icon{
