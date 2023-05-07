@@ -1,13 +1,29 @@
 
 import './App.css';
 import NavBar from './components/NavBar'
-import MainContainer from './components/MainContainer';
+import ItemListContainer from './components/ItemListContainer';
+import{BrowserRouter,Routes,Route} from 'react-router-dom';
 import ItemCount from './components/ItemCount';
 
-function App() {
-  return (<div className='App'>
+
+
+
+function App(){
+  return (
+<BrowserRouter>
+ <div className='App'>
+    
     <NavBar />
-<ItemCount/>  </div>)
-}
+    
+    <Routes>
+  <Route exact path='/' element={<ItemListContainer/>}/> 
+  <Route exact path='/teste' element={<ItemCount/>}/>
+  </Routes>
+</div>
+<a link href='/teste'>teste</a>
+</BrowserRouter>
+
+)
+};
 
 export default App;
