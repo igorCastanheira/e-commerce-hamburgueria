@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./styles/ItemListContainer.css"
 import ItemList from "./ItemList";
+import {products} from "../mock/products";
 
-const items=[  {id: '1', name: 'produto1', description: 'descr', stok: 10},
-{id: '2', name: 'produto2', description: 'descr', stok: 8},]
 
 
 
@@ -14,7 +13,7 @@ const [product,setProduct]= useState([]);
 
   const productList=()=>{
     return new Promise((resolve,reject)=>{
-        resolve(items);
+        resolve(products);
     })
   }
 
@@ -31,10 +30,12 @@ setTimeout(()=>{
 return(
     
     <div className="inner">
-      <div>Produtos</div>
+      <div>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
     <ItemList items = {product}/>
       </div>
-    
+      </div>
+    </div>
 )
 
 };
