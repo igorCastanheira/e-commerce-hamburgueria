@@ -1,46 +1,37 @@
-import React from "react";
-import "./styles/MainContainer.css"
-
-import { useState } from 'react';
+import React, {  useState } from "react"
+import "./styles/ItemCount.css"
 
 
-const ItemCount = (props) => {
-
-  const [product, setProduct] = useState({
-    id: 1,
-    name: "produto",
-    stock: 10,
-    ea: 1,
-  })
-  const add = () => {
-    if (product.stock > product.ea) {
-      setProduct((anterior) => { return anterior.ea + 1 })
-    }
+const ItemCount= (props) => {
+    const count = props.stok;
+    const [qnt, setQnt] = new useState(1);
+   
+function addToCart(){
+  if(props.stok>= qnt && qnt>0){
+    alert("adicionado ao carrinho " +qnt+ " unidades")
   }
-
-
-  const remove = () => {
-    if(product.ea>1){
-    setProduct((anterior) => { return anterior.ea - 1 })
-  }}
-
-  return (
-
-    <div>
-
-      <h1>{product.name}</h1>
-      <h2>{product.stock}</h2>
-      <h3>{product.ea}</h3>
-      <div>
-        <button className="BtnPrimary" onClick={add}>+</button>
-        <button className="BtnPrimary" onClick={remove}>-</button>
-      </div>
-    </div>
-
-
-  )
-
-
-
+  else{
+    alert("quantidade invalida")
+  }
 }
-export default ItemCount;
+    
+        //const input
+        let hasStock = (count>0 && count>qnt ) ? true : false; 
+        let removeStock=( qnt>=1   ) ? true: false;
+
+console.log("teste"+removeStock)
+    return (
+        <div className="Counter">
+            <h2>Estoque:</h2>
+            <h1>{props.stok}</h1>
+                <p>{qnt}</p>
+                 <div>
+                    <button onClick={hasStock? ()=> setQnt((qnt)=> qnt+1):console.log("err")}>+</button>
+				            <button onClick={removeStock?()=> setQnt((qnt)=>qnt-1):console.log("err")}>-</button>
+                 </div>
+              <button onClick={addToCart}>Adicionar ao carrinho</button>
+
+        </div>
+    )
+
+};export default ItemCount
