@@ -19,7 +19,7 @@ console.log("teste"+removeStock)
                 <button onClick={hasStock? ()=> setQnt((qnt)=>qnt+1):console.log("err")}>+</button>
 				<button onClick={removeStock?()=> setQnt((qnt)=>qnt-1):console.log("err")}>-</button>
             </div>
-            <button>Adicionar</button>
+            
 
         </div>
     )
