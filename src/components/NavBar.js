@@ -1,6 +1,5 @@
 import React from "react"
 import "./styles/NavBar.css"
-import Logo from "./assets/x-salada.jpg"
 import CartIcon from "./cartWidget"
 function ListItem(props){
     return(
