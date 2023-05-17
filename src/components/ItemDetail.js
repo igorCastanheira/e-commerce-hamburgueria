@@ -15,7 +15,7 @@ function ItemDetail ({item}){
             <h2>Nome: {item.name}</h2>
             <h2>Descrição:{item.description}</h2>
             <h2>Estoque: {item.stok}</h2>
-           <ItemCount/>
+           <ItemCount stok={item.stok}/>
   
             
           
