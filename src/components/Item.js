@@ -1,10 +1,11 @@
 import React from "react";          
+import { Link } from "react-router-dom";
 
 
 const Item =(props)=>{
-  
+  console.log("propriedade do item "+ props.name);
   return(
-
+   
 
 <div className="card border-secondary mb-3" style={{width:200}}>
   <img className="card-img-top" src=".../100px180/" alt="Imagem de capa do card"/>
@@ -13,7 +14,8 @@ const Item =(props)=>{
     <p className="card-text">{props.description}</p>
     <p>{props.stock}</p>
   </div>
-  <a href="/#"className="btn btn-secondary" >Detalhes</a>
+  
+  <Link to={`/item/${props.name}`}className="btn btn-secondary" >Detalhes</Link>
 </div>
 
 

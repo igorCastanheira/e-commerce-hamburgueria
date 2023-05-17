@@ -1,8 +1,9 @@
 import React from "react"
+import { Link } from "react-router-dom";
 function ListItem(props){
     return(
-    <li><a href={props.reference} id="lista" >
+    <li>< Link to={props.reference} id="lista" >
              {props.text}
-        </a></li>
+        </Link></li>
     )
     };export default ListItem;
