@@ -1,30 +1,29 @@
-import React from "react"
+
 import "./styles/NavBar.css"
 import CartIcon from "./cartWidget"
-function ListItem(props){
-    return(
-    <li><a href="#/" id="lista" >
-             {props.text}
-        </a></li>
-    )
-    
-}
+import CategoriesList from "./CategoriesList";
+const categories = [{id:1,categorie:"Camisa"},{id:2,categorie:"Calças"},{id:3,categorie:"Sapatos"}];
 
+   
+    
+   
+
+    
 
 function NavBar (){
     return(
         <nav className="navBar">
            
             <CartIcon/>
-            <ul>
-               <ListItem text="Lista do pedido"/>
-               <ListItem text="Preços"/>
-               <ListItem text="Pagamento"/>
-              
-            </ul>
+            
+          <CategoriesList categories={categories}/>
+            
         </nav>
 
     )
-}
 
-export default NavBar;
+   
+   
+};
+
+export default NavBar; 
