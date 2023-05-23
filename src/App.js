@@ -3,18 +3,16 @@ import './App.css';
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer';
 import{BrowserRouter,Routes,Route} from 'react-router-dom';
-import CartPage from './components/CartPage';
 import ItemDetailContainer from './components/ItemDetailContainer';
-import { CartContext } from './context/CartContext';
-//import ItemDetailContainer from './components/ItemDetailContainer';
-//import ItemDetail from './components/ItemDetail';
-
+import CartContextProvider from './context/CartContext';
+//import CartItems from './components/CartItems';
+import CartPageContainer from'./components/CartpageContaier';
 
 
 function App(){
   return (
 <BrowserRouter>
- <CartContext.Provider value={[]}>;
+ <CartContextProvider >
  <div className='App'>
     
     <NavBar />
@@ -23,10 +21,11 @@ function App(){
   <Route exact path='/:categoryId' element={<ItemListContainer/>}/> 
   <Route exact path='/' element={<ItemListContainer/>}/> 
   <Route exact path='/item/:itemId' element={<ItemDetailContainer />}/>
-  <Route exact path='/cart' element={<CartPage/>}/>
+  <Route exact path='/cart' element={<CartPageContainer/>}/>
   </Routes>
-</div>
-</CartContext.Provider>
+  </div>
+</CartContextProvider>
+
 </BrowserRouter>
 
 )

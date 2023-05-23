@@ -1,39 +1,42 @@
 import React, { useState } from "react";
-import { useCartContext } from "../context/CartContext";
+import { CartContext } from "../context/CartContext";
 
-
-
-
-
+import { useContext } from "react";
 
 
 
 
 function ItemDetail ({item}){
-  const valor = useCartContext();
+ 
   const[add,setAdd]=useState(true); 
-const [itemCart,setItemCart]= useState([]);
+
 const count = item.stok;
 const [qnt, setQnt] = new useState(1);
-
-
+const valueVar = useContext(CartContext);
 
 
     let hasStock = (count>0 && count>qnt ) ? true : false; 
     let removeStock=( qnt>0   ) ? true: false;
-    var id= item.id;
+  function addContext(){
+    valueVar.setItems([...valueVar.items,{id:item.id,nome:item.name,ammount:qnt}])
+    console.log(valueVar);
+  }  
+
 function addHandler(){
   setAdd(false)
-  setItemCart({"id": id,
-  "ammount": qnt })
-  valor.setItems({itemCart})
+ addContext();
+ 
+
 }
 return (
           <div key={item.id}>
-            <h2>Id: {item.id}</h2>
-            <h2>Nome: {item.name}</h2>
-            <h2>Descrição:{item.description}</h2>
-            <h2>Estoque: {item.stok}</h2>
+           
+            <h2> {item.name}</h2>
+            <p>Descrição:</p>
+            <p>{item.description}</p>
+            <p>Estoque: {item.stok}</p>
+            <h3>Preço:</h3>
+            <p>R$:{item.preco}</p>
            {add? ( 
 
         <div className=" Counter">

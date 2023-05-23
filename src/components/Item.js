@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 const Item =(props)=>{
-  console.log("propriedade do item "+ props.name);
+  
   return(
    
 
@@ -13,6 +13,8 @@ const Item =(props)=>{
     <h5 className="card-title">{props.name}</h5>
     <p className="card-text">{props.description}</p>
     <p>{props.stock}</p>
+    <p>Preço:</p>
+    <p>R$:{props.preco}</p>
   </div>
   
   <Link to={`/item/${props.name}`}className="btn btn-secondary" >Detalhes</Link>
